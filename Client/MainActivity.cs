@@ -23,7 +23,6 @@ namespace Client
             
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
             AppCenter.Start("34a69288-2d3b-4909-b542-188878f55b33",
                    typeof(Analytics), typeof(Crashes));
