@@ -24,11 +24,13 @@ namespace Client
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Main);
-            AppCenter.Start("34a69288-2d3b-4909-b542-188878f55b33",
-                   typeof(Analytics), typeof(Crashes));
+            
             GetInformation getInfo = new GetInformation();
             getInfo.OnGetInfoComplete += GetInfo_OnGetInfoComplete;
             getInfo.Show(FragmentManager, "GetInfo");
+
+            AppCenter.Start("34a69288-2d3b-4909-b542-188878f55b33",
+                   typeof(Analytics), typeof(Crashes));
         }
 
         private async void GetInfo_OnGetInfoComplete(object sender, GetInformation.OnGetInfoCompletEventArgs e)
